@@ -34,22 +34,24 @@ A backend REST API for a real estate platform that supports user authentication,
 * git clone https://github.com/motivated-star/task.git
 * npm install
 * Note:- Make a .env file
-  PORT=5001
-  MONGO_URL=your_mongodb_connection_string
-  JWT_SECRET=your_jwt_secret_key
-  UPSTASH_REDIS_REST_URL=your_redis_connection_url
+  | PORT=5001                                        |
+  | ------------------------------------------------ |
+  | MONGO_URL=your_mongodb_connection_string         |
+  | JWT_SECRET=your_jwt_secret_key                   |
+  | UPSTASH_REDIS_REST_URL=your_redis_connection_url |
 * Run the server - npm start
 
 #### Project Structure:
 
-├── controllers/       # Business logic for routes
-├── middlewares/       # Auth and caching middlewares
-├── models/            # Mongoose schemas
-├── routes/            # API route definitions
-├── utils/             # CSV import utilities
-├── .env               # Environment variables
-├── server.js          # Entry point
-└── README.md
+| ├── controllers/       # Business logic for routes    |
+| :------------------------------------------------------- |
+| ├── middlewares/       # Auth and caching middlewares |
+| ├── models/            # Mongoose schemas             |
+| ├── routes/            # API route definitions        |
+| ├── utils/             # CSV import utilities         |
+| ├── .env               # Environment variables        |
+| ├── server.js          # Entry point                  |
+| └── README.md                                         |
 
 #### API Endpoints:
 
