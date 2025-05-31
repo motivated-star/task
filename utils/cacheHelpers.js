@@ -12,13 +12,8 @@ const setCache = async (key, value, ttl = 3600) => {
 
 const invalidateCache = async (basePattern) => {
   try {
-    const response = await fetch(`https://definite-anteater-44163.upstash.io/v1/keys/${basePattern}*`, {
-      headers: {
-        Authorization: `Bearer ${process.env.UPSTASH_REDIS_REST_TOKEN}`,
-      },
-    });
+    const result = await redisClient.keys(`${basePattern}*`);
 
-    const { result } = await response.json();
     if (Array.isArray(result)) {
       for (const key of result) {
         await redisClient.del(key);
@@ -30,6 +25,7 @@ const invalidateCache = async (basePattern) => {
     console.error('Failed to invalidate Redis keys:', error);
   }
 };
+
 
 const generateCacheKey = (base, params = {}) => {
   const sortedParams = Object.keys(params).sort().map(key => `${key}=${params[key]}`).join('&');
