@@ -1,6 +1,6 @@
 const express = require('express');
 const connectMongoDB = require('./config/connection');
-const importRoute = require('./routes/import-csv'); // This should point to routes/index.js
+const importRoute = require('./routes/import-csv');
 const authRoute = require('./routes/auth');
 const propertyRoutes = require('./routes/property');
 const redisClient = require('./config/redisClient'); 

@@ -6,7 +6,7 @@ dotenv.config();
 
 async function handleUserSignup(req, res) {
   const { email, password } = req.body;
-  console.log(req.body); // Debugging line to check the request body
+  console.log(req.body); 
 
   try {
     const existingUser = await User.findOne({ email });

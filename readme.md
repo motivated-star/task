@@ -31,8 +31,7 @@ A backend REST API for a real estate platform that supports user authentication,
 
 * git clone https://github.com/motivated-star/task.git
 * npm install
-* Note:- Make a .env file
-  | PORT=5001                                        |
+* Note:- Make a .env file| PORT=5001                                        |
   | ------------------------------------------------ |
   | MONGO_URL=your_mongodb_connection_string         |
   | JWT_SECRET=your_jwt_secret_key                   |
@@ -68,7 +67,8 @@ A backend REST API for a real estate platform that supports user authentication,
 |  POST  | `/api/import-csv`                  | Upload properties via CSV file |
 
 #### Redis Caching:
-* Property listings (GET /property/) are cached.
-* Cache is invalidated on POST, PUT, or DELETE.
 
-#### Made By: Aastha Gupta 
+1. Property listings (GET /property/) are cached.
+1. Cache is invalidated on POST, PUT, or DELETE.
+
+#### Made By: Aastha Gupta

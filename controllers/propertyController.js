@@ -2,7 +2,7 @@ const Property = require('../models/property');
 const Favorite = require('../models/favorite');
 const { getCache, setCache, invalidateCache, generateCacheKey } = require('../utils/cacheHelpers');
 
-// CREATE
+
 const createProperty = async (req, res) => {
   try {
     const property = new Property({
@@ -91,7 +91,7 @@ const updateProperty = async (req, res) => {
     Object.assign(property, req.body);
     await property.save();
 
-    // Invalidate cache by ID and listings
+   
     await invalidateCache('properties');
     await invalidateCache(`property:${req.params.id}`);
 
@@ -112,7 +112,6 @@ const deleteProperty = async (req, res) => {
 
     await property.deleteOne();
 
-    // Invalidate cache by ID and listings
     await invalidateCache('properties');
     await invalidateCache(`property:${req.params.id}`);
 
@@ -122,7 +121,7 @@ const deleteProperty = async (req, res) => {
   }
 };
 
-// FAVORITES (no caching for now)
+
 const addFavorite = async (req, res) => {
   try {
     const { propertyId } = req.body;
