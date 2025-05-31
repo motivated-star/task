@@ -68,3 +68,9 @@ A backend REST API for a real estate platform that supports user authentication,
 |  GET  | `/prpoperty/favorites`             |  Get all favorite properties  |
 | DELETE | `/property/favorites/:property_id` |     Remove from favorites     |
 |  POST  | `/api/import-csv`                  | Upload properties via CSV file |
+
+#### Redis Caching:
+* Property listings (GET /property/) are cached.
+* Cache is invalidated on POST, PUT, or DELETE.
+
+#### Made By: Aastha Gupta 
