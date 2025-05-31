@@ -17,8 +17,6 @@ A backend REST API for a real estate platform that supports user authentication,
 * **Database:** MongoDB (Mongoose)
 * **Caching:** Redis (via Upstash or local instance)
 * **Authentication:** bcrypt, JWT
-* **CSV Parsing:** csv-parser
-* **Environment Variables:** dotenv
 
 ## Getting Started
 
